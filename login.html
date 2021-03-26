@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Pineapple</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+    <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css?family=Mukta');
+        .banner_img {
+            background: url(./assets/img/4.jpg) no-repeat center center;
+            position: relative;
+            height: 85vh;
+            background-size: cover;
+            top: 69px;
+        }
+        
+        .right_side img {
+            width: 40px;
+            margin: auto 10px;
+        }
+        
+         ::-webkit-input-placeholder {
+            /* Chrome/Opera/Safari */
+            color: white;
+        }
+        
+         ::-moz-placeholder {
+            /* Firefox 19+ */
+            color: white;
+        }
+        
+         :-ms-input-placeholder {
+            /* IE 10+ */
+            color: white;
+        }
+        
+         :-moz-placeholder {
+            /* Firefox 18- */
+            color: white;
+        }
+        
+        .login-reg-panel {
+            position: relative;
+            top: 53%;
+            transform: translateY(-50%);
+            text-align: center;
+            width: 70%;
+            right: 0;
+            left: 0;
+            margin: auto;
+            height: 355px;
+            background-color: #613758a1;
+        }
+        
+        .white-panel {
+            background-color: rgba(255, 255, 255, 1);
+            height: 442px;
+            position: absolute;
+            top: -50px;
+            width: 50%;
+            right: calc(50% - 50px);
+            transition: .3s ease-in-out;
+            z-index: 0;
+            box-shadow: 0 0 15px 9px #00000096;
+        }
+        
+        .login-reg-panel input[type="radio"] {
+            position: relative;
+            display: none;
+        }
+        
+        .login-reg-panel {
+            color: white;
+        }
+        
+        .login-reg-panel #label-login,
+        .login-reg-panel #label-register {
+            border: 1px solid #6b4463;
+            padding: 5px 5px;
+            width: 150px;
+            display: block;
+            text-align: center;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 18px;
+            color: white;
+            margin-top: 66px;
+        }
+        
+        .login-info-box {
+            width: 40%;
+            padding: 0 0 0 50px;
+            top: 48%;
+            left: 0;
+            position: absolute;
+            text-align: left;
+        }
+        
+        .register-info-box {
+            width: 40%;
+            top: 48%;
+            right: 0;
+            position: absolute;
+            text-align: left;
+        }
+        
+        .right-log {
+            right: 50px !important;
+        }
+        
+        .login-show,
+        .register-show {
+            z-index: 1;
+            display: none;
+            opacity: 0;
+            transition: 0.3s ease-in-out;
+            color: #242424;
+            text-align: left;
+            padding: 50px;
+        }
+        
+        .show-log-panel {
+            display: block;
+            opacity: 0.9;
+        }
+        
+        .login-show input[type="text"],
+        .login-show input[type="password"] {
+            width: 100%;
+            display: block;
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #5a2f51;
+            outline: none;
+            background: #5a2f51;
+            border-radius: 30px;
+        }
+        
+        .login_btn {
+            max-width: 150px;
+            width: 100%;
+            background: #5a2f51;
+            color: #f9f9f9;
+            border: none;
+            text-transform: uppercase;
+            border-radius: 2px;
+            float: right;
+            cursor: pointer;
+            border-radius: 30px;
+        }
+        
+        .login-show a {
+            display: inline-block;
+            padding: 10px 0;
+        }
+        
+        .register-show input[type="text"],
+        .register-show input[type="password"] {
+            width: 100%;
+            display: block;
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #5a2f51;
+            outline: none;
+            background: #5a2f51;
+            border-radius: 30px;
+        }
+        
+        .Register_btn {
+            max-width: 150px;
+            width: 100%;
+            background: #5a2f51;
+            color: #f9f9f9;
+            border: none;
+            padding: 10px;
+            text-transform: uppercase;
+            border-radius: 2px;
+            float: right;
+            cursor: pointer;
+            border-radius: 30px;
+        }
+        
+        .credit {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            color: #3B3B25;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            text-transform: uppercase;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            z-index: 99;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #592d4f;
+        }
+        
+        .footer_ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .footer_ul2 {
+            display: none;
+            list-style: none;
+            padding: 10px 0 0 25px;
+            margin: 10px 0;
+        }
+        
+        .footer {
+            margin-top: 9pc;
+        }
+        
+        li.footer_link {
+            margin: 0 30px;
+        }
+        
+        .copyright_row2 {
+            display: flex;
+            justify-content: center;
+        }
+        
+        @media only screen and (max-width:575px) {
+            .log_img {
+                width: 160px !important;
+                padding: 10px 0 0 0;
+            }
+            .input_container {
+                width: 100%;
+            }
+            .register_now {
+                margin-top: 20px;
+            }
+            a.register {
+                margin-right: 20px;
+            }
+            .support a i {
+                font-size: 20px;
+                margin: 14px 10px 0 0;
+                color: #244190;
+            }
+            .support {
+                padding-right: 0px !important;
+            }
+            .banner h3 {
+                margin-top: 20px;
+                font-size: 25px;
+            }
+            .contact {
+                color: white;
+                width: 78%;
+                margin-left: 36px;
+            }
+            div.main {
+                height: 80vh;
+            }
+            .footer_ul {
+                display: none;
+            }
+            .footer_ul2 {
+                display: block !important;
+                list-style: none;
+                padding: 10px 0 0 25px;
+                margin: 10px 0;
+            }
+            .btn_login {
+                margin-top: 0 !important;
+            }
+            .mobile_btn {
+                margin-left: 0;
+            }
+        }
+    </style>
+
+    <body>
+
+        <!-- ======= Header ======= -->
+        <header id="header" class="fixed-top header-transparent">
+            <div class="container header_flex">
+
+                <div class="logo float-left">
+                    <h1 class="text-light"><a id="logo" href="index.html">Pineapple</a></h1>
+                    <!-- Uncomment below if you prefer to use an image logo -->
+                    <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+                </div>
+
+                <form class="form-inline right_side">
+                    <a href="#" title="signup"><img src="./assets/img/icons/signup.png" alt="signup"></a>
+                    <a href="#" title="support"><img src="./assets/img/icons/support.png" alt="support"></a>
+                    <a href="tel: +910000000000" title="contact"><img src="./assets/img/icons/contact.png" alt="contact"> +91-0000000000</a>
+                    <!-- <a href="./login.html" title="logout"><img src="./assets/img/icons/logout.png" alt="logout"></a> -->
+                </form>
+                <!-- .nav-menu -->
+
+            </div>
+        </header>
+        <!-- End Header -->
+
+        <section class="banner_img">
+            <div class="login-reg-panel">
+                <div class="login-info-box">
+                    <h2>User</h2>
+                    <!-- <p>Login with your id</p> -->
+                    <label id="label-register" for="log-reg-show">User Login</label>
+                    <input type="radio" name="active-log-panel" id="log-reg-show" checked="checked">
+                </div>
+
+                <div class="register-info-box">
+                    <h2>Administrator</h2>
+                    <!-- <p>Admin Login</p> -->
+                    <label id="label-login" for="log-login-show">Admin Login</label>
+                    <input type="radio" name="active-log-panel" id="log-login-show">
+                </div>
+
+                <div class="white-panel">
+                    <div class="login-show">
+                        <h2>User Login</h2>
+                        <input type="text" placeholder="Email">
+                        <input type="password" placeholder="Password">
+                        <a href="">Forgot password?</a>
+                        <button class="login_btn" type="button"><a style="color: #ffffff;" href="./index.html">Login</a></button>
+                    </div>
+                    <div class="register-show">
+                        <h2>Administrator</h2>
+                        <input type="text" placeholder="Email">
+                        <input type="password" placeholder="Password">
+                        <button class="Register_btn" type="button"><a style="color: #ffffff;" href="./index.html">Login</a></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <br>
+        <br><br>
+        <footer id="footer">
+            <div class="footer-top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <ul class="footer_ul row">
+                                <li class="footer_link"><a href="#">About Us </a></li>|
+                                <li class="footer_link"> <a href="#">Privacy Policy </a></li>|
+                                <li class="footer_link"> <a href="#">Cancellation & Refund Policy </a></li>|
+                                <li class="footer_link"> <a href="#">Terms & Conditions</a></li>
+                            </ul>
+                            <ul class="footer_ul2">
+                                <li class="footer_link"><a href="#">About Us</a> </li>
+                                <li class="footer_link"> <a href="#">Privacy Policy</a></li>
+                                <li class="footer_link"> <a href="#">Cancellation & Refund Policy</a></li>
+                                <li class="footer_link"> <a href="#">Terms & Conditions</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="copyright">
+                    Copyright &copy; <strong><span>2021</span></strong>. All Rights Reserved
+                </div>
+                <div class="credits">
+                </div>
+            </div>
+        </footer>
+
+        <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+        <!-- Vendor JS Files -->
+        <script src="assets/vendor/jquery/jquery.min.js"></script>
+        <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+        <script src="assets/vendor/venobox/venobox.min.js"></script>
+        <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+        <script src="assets/vendor/counterup/counterup.min.js"></script>
+        <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+        <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+        <script src="assets/vendor/aos/aos.js"></script>
+
+        <!-- Template Main JS File -->
+        <script src="assets/js/main.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('.login-info-box').fadeOut();
+                $('.login-show').addClass('show-log-panel');
+            });
+
+
+            $('.login-reg-panel input[type="radio"]').on('change', function() {
+
+                if ($('#log-login-show').is(':checked')) {
+
+                    $('.register-info-box').fadeOut();
+                    $('.login-info-box').fadeIn();
+
+                    $('.white-panel').addClass('right-log');
+                    $('.register-show').addClass('show-log-panel');
+                    $('.login-show').removeClass('show-log-panel');
+
+                } else if ($('#log-reg-show').is(':checked')) {
+
+                    $('.register-info-box').fadeIn();
+                    $('.login-info-box').fadeOut();
+
+                    $('.white-panel').removeClass('right-log');
+
+                    $('.login-show').addClass('show-log-panel');
+                    $('.register-show').removeClass('show-log-panel');
+                }
+            });
+        </script>
+
+    </body>
+
+</html>

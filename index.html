@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Pineapple</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+    <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<style>
+    .formSearch {
+        background: white;
+        position: relative;
+        z-index: 1;
+        padding: 15px;
+        margin: auto 60px;
+    }
+    
+    .btn-danger {
+        color: #fff;
+        background-color: #dc3545;
+        border-color: #dc3545;
+        border-radius: 30px;
+        height: 50px;
+        width: 150px;
+    }
+    
+    label {
+        font-size: 17px;
+        margin: 8px;
+        padding: 0 10px;
+        color: #5a2f51;
+        -webkit-transition: top 0.2s ease-in-out, font-size 0.2s ease-in-out;
+        transition: top 0.2s ease-in-out, font-size 0.2s ease-in-out;
+    }
+    
+    .active_lable {
+        top: -35px;
+        font-size: 16px;
+        font-weight: 600;
+    }
+    
+     ::-webkit-calendar-picker-indicator {
+        filter: invert(1);
+    }
+    
+    #Check_content {
+        color: #5a2f51;
+        padding-right: 15px;
+        font-weight: 600;
+    }
+    
+    .form-check-input {
+        position: absolute;
+        margin-top: .3rem;
+        margin-left: -1.25rem;
+        top: 15px;
+    }
+    
+    .date {
+        position: absolute;
+        top: 0;
+        font-size: 0 !important;
+        margin: 8px;
+        padding: 0 10px;
+        color: white;
+        -webkit-transition: top 0.2s ease-in-out, font-size 0.2s ease-in-out;
+        transition: top 0.2s ease-in-out, font-size 0.2s ease-in-out;
+    }
+    
+    hr {
+        background: #5a2f51;
+        margin: 0 100px;
+    }
+    
+    select,
+    input[type=date],
+    input[type=text],
+    input[type=number] {
+        width: 100%;
+        padding: 15px;
+        margin-top: -3px;
+        border: 1px solid white;
+        font-size: 16px;
+        background-color: #5a2f51;
+        color: white;
+        border-radius: 30px;
+        height: 50px;
+        outline: none;
+    }
+    
+     ::-webkit-input-placeholder {
+        /* Chrome/Opera/Safari */
+        color: white;
+    }
+    
+     ::-moz-placeholder {
+        /* Firefox 19+ */
+        color: white;
+    }
+    
+     :-ms-input-placeholder {
+        /* IE 10+ */
+        color: white;
+    }
+    
+     :-moz-placeholder {
+        /* Firefox 18- */
+        color: white;
+    }
+    
+    input[type=text]:focus,
+    input[type=date]:focus {
+        outline: none;
+        color: white;
+    }
+    
+    #show-me-two,
+    #show-me-three {
+        display: none;
+    }
+    /* input[type=checkbox]:checked {
+        background-color: #a77e2d !important;
+        color: #ffffff !important;
+    } */
+    
+    input[type='radio']:after {
+        width: 20px;
+        height: 20px;
+        border-radius: 15px;
+        top: -3px;
+        left: -6px;
+        position: relative;
+        background-color: #d1d3d1;
+        content: '';
+        display: inline-block;
+        visibility: visible;
+        border: 5px solid #948a8a;
+    }
+    
+    input[type='radio']:checked:after {
+        width: 20px;
+        height: 20px;
+        border-radius: 15px;
+        top: -2px;
+        left: -5px;
+        position: relative;
+        background-color: #955ba0;
+        content: '';
+        display: inline-block;
+        visibility: visible;
+        border: 5px solid #592e50;
+    }
+    
+    button.btn.btn-danger.my-1 {
+        border-radius: 32px;
+    }
+</style>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top header-transparent">
+        <div class="container header_flex">
+
+            <div class="logo float-left">
+                <h1 class="text-light"><a id="logo" href="index.html">Pineapple</a></h1>
+                <!-- Uncomment below if you prefer to use an image logo -->
+                <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+            </div>
+
+            <nav class="nav-menu d-none d-lg-flex">
+                <ul id="navbar_ul">
+                    <li class="active">
+                        <a href="index.html"><img src="./assets/img/icons/plane.png" alt="1"> <span>Flight</span></a>
+                    </li>
+                    <li>
+                        <a href="about.html"><img src="./assets/img/icons/hotel.png" alt="1"> <span>Hotel</span></a>
+                    </li>
+                    <li>
+                        <a href="services.html"><img src="./assets/img/icons/holiday.png" alt="Holiday"> <span>Holiday</span></a>
+                    </li>
+                    <li>
+                        <a href="portfolio.html"><img src="./assets/img/icons/car.png" alt="car"> <span>car</span></a>
+                    </li>
+                    <li>
+                        <a href="portfolio.html"><img src="./assets/img/icons/account.png" alt="account.png"> <span>account</span></a>
+                    </li>
+                    <li class="drop-down"><a href="">more option</a>
+                        <ul id="drop_down_option">
+                            <li><a href="#">Drop Down 1</a></li>
+                            <li class="drop-down"><a href="#">Drop Down 2</a>
+                            </li>
+                            <li><a href="#">Drop Down 3</a></li>
+                            <li><a href="#">Drop Down 4</a></li>
+                            <li><a href="#">Drop Down 5</a></li>
+                        </ul>
+                    </li>
+                    <!-- <li><a href="contact.html">Contact Us</a></li> -->
+                </ul>
+
+            </nav>
+            <form class="form-inline right_side">
+                <!-- <button id="logout" class="btn btn-abhay" type="submit"><a href="./login.html">Logout</a></button> -->
+                <a href="#" title="profile"><img src="./assets/img/icons/profile.png" alt="profile"></a>
+                <a href="#" title="support"><img src="./assets/img/icons/support.png" alt="support"></a>
+                <a href="./login.html" title="logout"><img src="./assets/img/icons/logout.png" alt="logout"></a>
+            </form>
+            <!-- .nav-menu -->
+
+        </div>
+    </header>
+    <!-- End Header -->
+
+    <!-- ======= Hero Section ======= -->
+    <section id="hero" class="d-flex justify-cntent-center align-items-center">
+        <div id="heroCarousel" class="container-fluid">
+            <div class="formSearch" data-aos="fade-up">
+                <div class="radio_btn">
+                    <label class="input_lable">
+                        <input id='watch-me' type="radio" name="dark" value="One_way" checked>
+                        <span class="design"></span>
+                        <span class="text One_way">One way</span>
+                    </label>
+
+                    <label class="input_lable">
+                        <input id='see-me' type="radio" name="dark" value="Roundtrip">
+                        <span class="design"></span>
+                        <span class="text Roundtrip">Roundtrip</span>
+                    </label>
+
+                    <label class="input_lable">
+                        <input id='look-me' type="radio" name="dark" value="multi_city">
+                        <span class="design"></span>
+                        <span class="text multi_city">Multi-City</span>
+                    </label>
+                </div>
+                <div id='show-me' class="form">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label class="active_lable" for="From">Flying From</label>
+                            <input id="From" placeholder="Flying From" type="text" class="cool" />
+                        </div>
+                        <div class="col-md-4">
+                            <label class="active_lable" for="TO">Flying TO</label>
+                            <input id="TO" placeholder="Flying To" type="text" class="cool" />
+                        </div>
+                        <div class="col-md-4">
+                            <label class="active_lable" for="fname" class="date">Departure Date</label>
+                            <input id="fname" type="date" class="cool" style="text-transform: lowercase;" />
+                        </div>
+                    </div>
+                    <div class="row mb-0 mt-0">
+                        <div class="col-md-3">
+                            <label class="active_lable" for="lname">Adult</label>
+                            <input id="lname" type="number" min="1" max="10" value="1" class="cool" />
+                        </div>
+                        <div class="col-md-3">
+                            <label class="active_lable" for="lname">Children (2 - 12 yrs)</label>
+                            <input id="lname" type="number" min="0" max="10" value="0" class="cool" />
+                        </div>
+                        <div class="col-md-3">
+                            <label class="active_lable" for="lname">Infant (0 - 24 Month)</label>
+                            <input id="lname" type="number" min="0" max="10" value="0" class="cool" />
+                        </div>
+                        <div class="col-md-3">
+                            <label class="active_lable" for="Travel class">Travel class</label>
+                            <select class="drop_down_option">
+                                      <option>Economy class</option>
+                                      <option>Business class</option>
+                                      <option>First class</option>
+                                  </select>
+                            <span class="select-arrow"></span>
+                        </div>
+                    </div>
+                    <div class="row mb-0 mt-3">
+                        <div class="col-md-5 off-set-4"></div>
+                        <div class="col-md-4 off-set-4">
+                            <input class="form-check-input" type="checkbox" id="gridCheck1"> <span id="Check_content">Direct Flight</span>
+                            <button type="submit" class="btn btn-danger my-1 ">Show flights</button>
+                        </div>
+                    </div>
+                </div>
+                <div id='show-me-two' class="form">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label class="active_lable" for="From">Flying From</label>
+                            <input id="From" placeholder="Flying From" type="text" class="cool" />
+                        </div>
+                        <div class="col-md-4">
+                            <label class="active_lable" for="TO">Flying TO</label>
+                            <input id="TO" placeholder="Flying To" type="text" class="cool" />
+                        </div>
+                        <div class="col-md-2">
+                            <label class="active_lable" for="fname" class="date">Departure Date</label>
+                            <input id="fname" type="date" class="cool" style="text-transform: lowercase;" />
+                        </div>
+                        <div class="col-md-2">
+                            <label class="active_lable" for="fname" class="date">Arrival Date</label>
+                            <input id="fname" type="date" class="cool" style="text-transform: lowercase;" />
+                        </div>
+                    </div>
+                    <div class="row mb-0 mt-0">
+                        <div class="col-md-3">
+                            <label class="active_lable" for="lname">Adult</label>
+                            <input id="lname" type="number" min="1" max="10" value="1" class="cool" />
+                        </div>
+                        <div class="col-md-3">
+                            <label class="active_lable" for="lname">Children (2 - 12 yrs)</label>
+                            <input id="lname" type="number" min="0" max="10" value="0" class="cool" />
+                        </div>
+                        <div class="col-md-3">
+                            <label class="active_lable" for="lname">Infant (0 - 24 Month)</label>
+                            <input id="lname" type="number" min="0" max="10" value="0" class="cool" />
+                        </div>
+                        <div class="col-md-3">
+                            <label class="active_lable" for="Travel class">Travel class</label>
+                            <select class="drop_down_option">
+                                      <option>Economy class</option>
+                                      <option>Business class</option>
+                                      <option>First class</option>
+                                  </select>
+                            <span class="select-arrow"></span>
+                        </div>
+                    </div>
+                    <div class="row mb-0  mt-3">
+                        <div class="col-md-5 off-set-4"></div>
+                        <div class="col-md-4 off-set-4">
+                            <input class="form-check-input" type="checkbox" id="gridCheck1"> <span id="Check_content">Direct Flight</span>
+                            <button type="submit" class="btn btn-danger my-1 ">Show flights</button>
+                        </div>
+                    </div>
+                </div>
+                <div id='show-me-three' class="form">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label class="active_lable" for="From">Flying From</label>
+                            <input id="From" placeholder="Flying From" type="text" class="cool" />
+                        </div>
+                        <div class="col-md-4">
+                            <label class="active_lable" for="TO">Flying TO</label>
+                            <input id="TO" placeholder="Flying To" type="text" class="cool" />
+                        </div>
+                        <div class="col-md-4">
+                            <label class="active_lable" for="fname" class="date">Departure Date</label>
+                            <input id="fname" type="date" class="cool" style="text-transform: lowercase;" />
+                        </div>
+                    </div>
+                    <div class="row mb-0 mt-0">
+                        <div class="col-md-3">
+                            <label class="active_lable" for="lname">Adult</label>
+                            <input id="lname" type="number" min="1" max="10" value="1" class="cool" />
+                        </div>
+                        <div class="col-md-3">
+                            <label class="active_lable" for="lname">Children (2 - 12 yrs)</label>
+                            <input id="lname" type="number" min="0" max="10" value="0" class="cool" />
+                        </div>
+                        <div class="col-md-3">
+                            <label class="active_lable" for="lname">Infant (0 - 24 Month)</label>
+                            <input id="lname" type="number" min="0" max="10" value="0" class="cool" />
+                        </div>
+                        <div class="col-md-3">
+                            <label class="active_lable" for="Travel class">Travel class</label>
+                            <select class="drop_down_option">
+                                      <option>Economy class</option>
+                                      <option>Business class</option>
+                                      <option>First class</option>
+                                  </select>
+                            <span class="select-arrow"></span>
+                        </div>
+                    </div>
+                    <div class="row mb-0 mt-3">
+                        <div class="col-md-5 off-set-4"></div>
+                        <div class="col-md-4 off-set-4">
+                            <input class="form-check-input" type="checkbox" id="gridCheck1"> <span id="Check_content">Direct Flight</span>
+                            <button type="submit" class="btn btn-danger my-1 ">Show flights</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Hero -->
+
+    <main id="main">
+
+        <!-- ======= Services Section ======= -->
+
+        <section class="services">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Services</h2>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-3 img_parent" data-aos="fade-up" data-aos-easing="ease-in-out">
+                        <div class="img_div">
+                            <img src="./assets/img/icons/1.png" alt="1">
+                            <p class="tilte">Flight</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 img_parent" data-aos="fade-up" data-aos-easing="ease-in-out">
+                        <div class="img_div">
+                            <img src="./assets/img/icons/2.png" alt="2">
+                            <p class="tilte">Hotel</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 img_parent" data-aos="fade-up" data-aos-easing="ease-in-out">
+                        <div class="img_div">
+                            <img src="./assets/img/icons/3.png" alt="3">
+                            <p class="tilte">Holiday</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 img_parent" data-aos="fade-up" data-aos-easing="ease-in-out">
+                        <div class="img_div">
+                            <img src="./assets/img/icons/4.png" alt="4">
+                            <p class="tilte">car</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- End Services Section -->
+        <section class="services">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Important Notice</h2>
+                    <div class="heading-line"></div>
+                    <p>News Regarding travel booking & Holidays.</p>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 ">
+                        <p class="text " style="font-size: 18px; ">
+                            <marquee direction="left ">
+                                <p style="color: #5a2f51 !important ">For flights which have been cancelled, we have protected your booking... Customers who have booked their travel through a travel agent/online portal are requested to connect with the travel agent directly to redeem their
+                                    credit note.
+                                </p>
+                            </marquee>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Useful Links</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Our Services</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Indian Holidays</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Religious Packages</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">International Holidays</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Book Flights</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Book Hotels</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Passport</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Visa</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-contact">
+                        <h4>Contact Us</h4>
+                        <p>
+                            A108 Adam Street <br> New York, NY 535022<br> United States <br><br>
+                            <strong>Phone:</strong> +1 5589 55488 55<br>
+                            <strong>Email:</strong> info@example.com<br>
+                        </p>
+
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-info">
+                        <h4>About Pineapple</h4>
+                        <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
+                        <div class="social-links mt-3">
+                            <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                            <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                            <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                            <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="copyright">
+                Copyright &copy; <strong><span>2021</span></strong>. All Rights Reserved
+            </div>
+            <div class="credits">
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer -->
+
+    <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+    <script src="assets/vendor/venobox/venobox.min.js"></script>
+    <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+    <script src="assets/vendor/counterup/counterup.min.js"></script>
+    <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+    <script>
+        // search box
+        $(document).ready(function() {
+            $("#watch-me").click(function() {
+                $("#show-me:hidden").show('slow');
+                $("#show-me-two").hide();
+                $("#show-me-three").hide();
+            });
+            $("#watch-me").click(function() {
+                if ($('watch-me').prop('checked') === false) {
+                    $('#show-me').hide();
+                }
+            });
+
+            $("#see-me").click(function() {
+                $("#show-me-two:hidden").show('slow');
+                $("#show-me").hide();
+                $("#show-me-three").hide();
+            });
+            $("#see-me").click(function() {
+                if ($('see-me-two').prop('checked') === false) {
+                    $('#show-me-two').hide();
+                }
+            });
+
+            $("#look-me").click(function() {
+                $("#show-me-three:hidden").show('slow');
+                $("#show-me").hide();
+                $("#show-me-two").hide();
+            });
+            $("#look-me").click(function() {
+                if ($('see-me-three').prop('checked') === false) {
+                    $('#show-me-three').hide();
+                }
+            });
+
+        });
+    </script>
+</body>
+
+</html>
